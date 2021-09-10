@@ -1,0 +1,111 @@
+<html>
+<head>
+<script language="javaScript">
+
+function guessing()
+{
+	/* block comment 
+	1.Input a number that you want the user to choose to win. 
+	2.The user types in their number guess and after, create a function that will display too high or too low if they don't guess it.
+	3. Let them guess again and guess an endlss amount of times until they get it, all while telling them if it's too high or too low.
+	4. It also needs to keep track of how many inputs the user has put in and display that back to them if they win.
+	5. If it is equal, alert them they won. If not, tell them to keep going. 
+	6. If they do guess it, end the function and tell them the number of times it took them and tell them they won. 
+	
+		Write n algorithm to create a guessing game.
+		Let the user know if the guess is too high or too low.
+		If they guess the number, alert this fact and tell them how many guesses it took them to guess the number. 
+	*/
+	var usersGuess = -1;
+	var numOfGuesses = 0;// camel case
+	var rand= Math.random()*10
+	rand=rand+1;
+	rand=parseInt(rand);
+	alert(rand);
+	
+	usersGuess= prompt("Type your random number.") 
+	numOfGuesses= numOfGuesses+1
+	alert("usersGuess,"+usersGuess);
+	
+	
+	while(usersGuess != rand)//Loop while the users answer is wrong.
+	{
+			numOfGuesses= numOfGuesses+1
+		if(usersGuess < rand )//test if guess is too low
+		{
+			//With an alert, tell the user the guess is too low. 
+			alert("Too Low.")
+		}
+		else if (usersGuess > rand )//guess is too high
+		{
+			alert("Too High.")
+		}
+		// prompt the user to enter a new number
+		
+		usersGuess= prompt("enter new number.")
+	}
+		
+	if (usersGuess==rand)
+		
+		{
+			alert("Good job!")
+			alert("You guessed the right number in "+numOfGuesses+ "guesses.")
+		}
+		
+	
+}
+
+
+function greeting()
+{
+	alert("Hello there.")// "hello there" is a parameter. 
+
+}// end of greeting()
+
+function greeting1()
+{
+	//=is the assignment operator
+	//assignment stores what's on the right side into the element on the left.
+	var name = prompt("Type Your Name.")// "type your name" is a parameter. 
+	alert("Greetings, "+name);
+}// end of greeting1()
+
+function greeting2()
+{
+
+	var answer = confirm("Do you want to play again?");
+	alert(answer);
+
+
+}
+</script>
+</head>
+<body bgcolor="#ff91a4
+">
+<font color="white" face="Goudy Old Style" size="5">
+<center>
+
+
+<h1>My First JavaScript Page</h1>
+
+Click here <a href="index.html"> to go back to the home page. </a> <br/><br/>
+
+<input type="button" value="Play my guessing game." onclick="guessing()"/><br/>
+
+<br/><br/><br/><br/><br/>
+
+<hr/>
+
+<input type="button" value="Click me" onclick="greeting()"/><br/>
+
+<hr/>
+
+<input type="button" value="Click to enter name" onclick="greeting1()"/><br/>
+
+<hr/>
+
+<input type="button" value="Click one more time" onclick="greeting2()"/><br/>
+
+<body>
+
+</html>
