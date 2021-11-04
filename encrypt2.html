@@ -70,14 +70,14 @@
 		}
 		else
 		{
-			document.getElementById("").value = code();
+			document.getElementById("unencrypt").value = code(false);
 		}
 	}
 		else  // There's data in the first box
 		{
 			if (document.getElementById("encrypt").value == "") // Scrambled box is empty
 		{
-			document.getElementById("").value = code();
+			document.getElementById("encrypt").value = code(true);
 		}
 			else
 				{
@@ -152,5 +152,7 @@ function code(amIencrypting)
 		Encrypted Message
 		<input type = "text" size="40" id="encrypt"/> 
 	</center>
+Click here <a href="index.html"> to go back to the home page. </a> <br/><br/>
+
 </body>
 </html>
