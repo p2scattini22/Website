@@ -1,0 +1,163 @@
+<html>
+<head>
+<script language = "javaScript">
+
+var counter = 0;
+var score = 0; 
+
+var words = ["Vivaldi", 
+			"Beethoven", 
+			"Tchaikovsky", 
+			"Ravel", 
+			"Stravinsky"]
+
+
+var defs = [ "Baroque",
+			"Classical",
+			"Romantic",
+			"Impressionism",
+			"Modern"
+			]
+			
+var asked = [false,
+			false,
+			false,
+			false,
+			false
+			]
+			
+var qAsked = 0; 
+
+function nextQ()
+{
+	//alert(getUnusedIndex());
+	var checked = document.getElementById("terms").checked;
+	document.getElementById("image").style.visibility = "hidden";
+	document.getElementById("answer").value = "";
+	displayClue(checked);
+}
+
+function displayClue(wordsOrDefs)
+{
+	//alert(wordsOrDefs);
+	qAsked = getUnusedIndex();
+	if(wordsOrDefs == true)
+	{
+		document.getElementById("clue").value = words[qAsked];
+
+	}
+	else
+	{
+		document.getElementById("clue").value = defs[qAsked];
+	}
+}
+
+function getUnusedIndex()
+{
+
+	var rand = Math.random()* words.length;
+	rand = parseInt(rand);
+	
+	while ( asked[rand] == true)
+	{
+		var rand = Math.random()* words.length;
+		rand = parseInt(rand);
+	} //Rand is an index that hasn't been picked yet. 
+	
+	asked[rand] = true; 
+	
+	return rand;
+}
+
+
+function nextA()
+{
+	var checked = document.getElementById("terms").checked;
+	
+	checkAnswer(checked);
+}
+
+function checkAnswer(defsAreAnswers)
+{
+	var answers;
+	
+	if (defsAreAnswers == true)
+	{
+		alert(defs);
+		answers = defs
+	}
+	else
+	{
+		alert(words);
+		answers = words
+	}
+	
+	var daAnswer = document.getElementById("answer").value;
+	
+	if (daAnswer == answers[qAsked])
+	{
+		score+=5
+		alert("Correct!! You score is "+score);
+		document.getElementById("winLose").src= "images/snoopImage.jpg";
+	}
+	else
+	{
+		alert("Try again. You're score is "+score);
+		document.getElementById("winLose").src= "images/sadSnoop.jpg";
+	}
+	document.getElementById("image").style.visibility = "visible";
+	if(counter < words.length-1)
+	{
+		counter++;
+	}
+	else
+	{
+		counter=0
+		endQuiz();
+	} 
+}
+
+function endQuiz()
+{
+
+	alert("End of Quiz. You're final score is "+ score +" out if 25.");
+	
+	for(i =0; i<asked.length; i++) // for loop
+	{
+		asked[i] = false;
+	}
+	alert(asked);
+}
+
+</script>
+</head>
+<body>
+<body bgcolor="ivory">
+<center>
+<h1>What Stylistic Period is the Composer From?</h1>
+
+<input type="radio" id="terms" name="qType" onchange="restart()" checked>
+  <label for="terms">Words</label>
+<input type="radio" id="defs" name="qType" on>
+  <label for="defs">Definitions</label>
+<input type="button" value="Next" onclick="nextQ()"/>
+
+<br/><br/>
+<input type = "text" id="clue" readonly size=40>
+
+<br/><br/>
+<input type = "text" id="answer" onfocusout="nextA()" size=40>
+<br/>
+<input type="button" value="Check Answer" />
+</center> 
+
+<div id="image" style="position:absolute; top:250; left:450; visibility:hidden;">
+
+<img id="winLose" src = "images/snoopImage.jpg" width="400">
+
+</div>
+
+Click here <a href="index.html"> to go back to the home page. </a>
+
+</body>
+</html>
