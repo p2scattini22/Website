@@ -1,0 +1,152 @@
+<html>
+<head>
+<script language = "javaScript">
+
+
+var zoomedCities = ["images/zoomParis.jpg",
+					"images/zoomLondon.jpg",
+					"images/zoomSeattle.jpg",
+					"images/zoomTokyo.jpg",
+					"images/zoomMexico.jpg",
+					"images/zoomSeoul.jpg",
+					"images/zoomRome.jpg",
+					"images/zoomBarcelona.jpg",
+					"images/zoomEgypt.jpg",
+					"images/zoomRio.jpg",
+					"images/zoomSantiago.jpg",
+					"images/zoomMilan.jpg",
+					"images/zoomMel.jpg"
+					]
+var originalCities = ["images/normParis.jpg",
+					"images/normLondon.jpg",
+					"images/normSeattle.jpg",
+					"images/normTokyo.jpg",
+					"images/normMexico.jpg",
+					"images/normSeoul.jpg",
+					"images/normRome.jpg",
+					"images/normBarcelona.jpg",
+					"images/normRio.jpg",
+					"images/normSantiago.jpg",
+					"images/normMilan.jpg",
+					"images/normMel.jpg"
+					]
+var cityNames = ["Paris",
+				"London",
+				"Seattle",
+				"Tokyo",
+				"Mexico City",
+				"Seoul",
+				"Rome",
+				"Barcelona",
+				"Cairo",
+				"Rio",
+				"Santiago",
+				"Milan",
+				"Melbourne"
+				]
+var audioList = ["sounds/frenchAudio.mp3",
+				"sounds/englandAudio.mp3",
+				"sounds/americaAudio.mp3",
+				"sounds/japanAudio.mp3",
+				"sounds/mexicoAudio.mp3",
+				"sounds/skAudio.mp3"]
+				
+var counter = -1;
+
+
+function checkCity()
+{
+	for(i=0; i<cityNames.length; i++)
+	{
+		if (document.getElementById("message").value == cityNames[i])
+		{
+			document.getElementById("display").src= originalCities[i];
+			checkAnswer(true);
+			alert("Correct")
+			counter = i;
+			i= cityNames.length;
+		}
+	}
+	if(counter ==-1)
+		alert("Try again. You're score is 0");
+		
+	alert(counter);
+} 
+
+function checkAnswer(usersGuess)
+{	
+	if (usersGuess == true)
+	{
+		document.getElementById("player").src = audioList[i];
+		document.getElementById("player").play();
+	}
+}
+
+function next()
+{
+	document.getElementById("display").src= zoomedCities[counter];
+	increment();
+}
+function increment() 
+{
+	if( counter == zoomedCities.length-1)
+	{
+		counter=0
+	}
+	else
+	{
+		counter++;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+<body bgcolor="badbf8">
+	<center>
+		<h1> Guess Which City the Image is in</h1>
+		<br/><br/>
+		<input type ="button" value="Guess the City" onClick="checkCity()"/>
+		<input type ="button" value="Next" onClick="next()"/>	
+
+		<input type = "text" size="40" id="message"/> 
+		<br/><br/>
+		
+		<img src="images/zoomParis.jpg" id="display" width="800"/>
+		<audio id = "player"></audio> 
+
+	</center>
+</body>
+</html>
