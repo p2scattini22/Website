@@ -69,7 +69,6 @@ function checkCity()
 	}
 	if(counter ==-1)
 		alert("Try again. You're score is 0");
-		checkAnswer(false)
 	alert(counter);
 } 
 
@@ -79,10 +78,6 @@ function checkAnswer(usersGuess)
 	{
 		document.getElementById("player").src = audioList[i];
 		document.getElementById("player").play();
-	}
-	if (usersGuess == false)
-	{
-		document.getElementById("display").src="images/normMel.jpg"
 	}
 }
 
