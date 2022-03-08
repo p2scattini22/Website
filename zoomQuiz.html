@@ -50,6 +50,9 @@ var audioList = ["sounds/frenchAudio.mp3",
 				"sounds/japanAudio.mp3",
 				"sounds/mexicoAudio.mp3",
 				"sounds/skAudio.mp3"]
+var slideHints = ["images/hintParis.jpg",
+				"images/hintLondon.jpg",
+				"images/hintSeattle.jpg"]
 				
 var counter = -1;
 
@@ -65,6 +68,10 @@ function checkCity()
 			alert("Correct")
 			counter = i;
 			i= cityNames.length;
+		}
+		else
+		{
+			checkAnswer(false)
 		}
 	}
 	if(counter==-1)
@@ -82,7 +89,7 @@ function checkAnswer(usersGuess)
 	}
 	else
 	{
-		document.getElementById("display").src= zoomedCities[11];
+		document.getElementById("display").src= slideHints[i];
 	}
 }
 
