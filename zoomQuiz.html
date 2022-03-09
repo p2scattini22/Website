@@ -47,7 +47,7 @@ var audioList = ["sounds/frenchAudio.mp3",
 				"sounds/japanAudio.mp3",
 				"sounds/mexicoAudio.mp3",
 				"sounds/skAudio.mp3"]
-var hintList = ["images/parisHint.jpg",
+var hintList = ["images/zoomMel.jpg",
 		"images/hintLondon.jpg",
 		"images/hintSeattle.jpg"]
 
@@ -70,7 +70,7 @@ function checkCity()
 		
 	if(counter == -1)
 		checkAnswer(false)
-	alert("Try again please.")
+	alert("Try again now.")
 	      
 	      
 	alert(counter);
@@ -85,7 +85,7 @@ function checkAnswer(usersGuess)
 	}
 	else
 	{
-		document.getElementById("display").src= hintList[counter];
+		document.getElementById("display").src= hintList[i];
 	}
 }
 
