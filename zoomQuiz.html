@@ -71,7 +71,7 @@ function checkCity()
 		}
 		else
 		{
-			checkAnswer(false)
+			document.getElementById("display").src= slideHints[i];
 		}
 	}
 	if(counter==-1)
@@ -87,10 +87,10 @@ function checkAnswer(usersGuess)
 		document.getElementById("player").src = audioList[i];
 		document.getElementById("player").play();
 	}
-	else
-	{
-		document.getElementById("display").src= slideHints[i];
-	}
+	//else
+	//{
+		//document.getElementById("display").src= slideHints[i];
+	//}
 }
 
 function next()
