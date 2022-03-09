@@ -87,7 +87,7 @@ function checkAnswer(usersGuess)
 		document.getElementById("player").src = audioList[i];
 		document.getElementById("player").play();
 	}
-	else
+	if (usersGuess == false)
 	{
 		document.getElementById("display").src= slideHints[i];
 	}
