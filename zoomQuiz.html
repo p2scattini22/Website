@@ -50,6 +50,10 @@ var audioList = ["sounds/frenchAudio.mp3",
 				"sounds/japanAudio.mp3",
 				"sounds/mexicoAudio.mp3",
 				"sounds/skAudio.mp3"]
+var slideHint = ["images/parisHint.jpg",
+		 "images/londonHint.jpg",
+		 "images/seattleHint.jpg"
+		 ]
 var counter = -1;
 
 
@@ -65,7 +69,12 @@ function checkCity()
 			counter = i;
 			i= cityNames.length;
 		}
+		else
+		{
+			document.getElementById("display").src= slideHint[i];
+		}
 	}
+		
 	if(counter == -1)
 		alert("Try Again.")
 	
