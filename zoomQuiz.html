@@ -14,8 +14,8 @@ var zoomedCities = ["images/zoomParis.jpg",
 					"images/zoomEgypt.jpg",
 					"images/zoomRio.jpg",
 		   			"images/zoomSantiago.jpg",
-					"images/zoomMilan.jpg",
-					"images/zoomMel.jpg"]
+					"images/zoomMilan.jpg"]
+					//"images/zoomMel.jpg"
 var originalCities = ["images/normParis.jpg",
 				"images/normLondon.jpg",
 				"images/normSeattle.jpg",
@@ -47,9 +47,7 @@ var audioList = ["sounds/frenchAudio.mp3",
 				"sounds/japanAudio.mp3",
 				"sounds/mexicoAudio.mp3",
 				"sounds/skAudio.mp3"]
-var hintList = ["images/zoomMel.jpg",
-		"images/hintLondon.jpg",
-		"images/hintSeattle.jpg"]
+var hintList = "images/zoomMel.jpg"
 
 var counter = -1;
 
@@ -85,7 +83,7 @@ function checkAnswer(usersGuess)
 	}
 	else
 	{
-		document.getElementById("display").src= hintList[i];
+		document.getElementById("display").src= hintList;
 	}
 }
 
