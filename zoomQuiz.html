@@ -12,7 +12,10 @@ var zoomedCities = ["images/zoomParis.jpg",
 					"images/zoomRome.jpg",
 					"images/zoomBarcelona.jpg",
 					"images/zoomEgypt.jpg",
-					"images/zoomRio.jpg"]
+					"images/zoomRio.jpg",
+		   			"images/zoomSantiago.jpg",
+					"images/zoomMilan.jpg",
+					"images/zoomMel.jpg"]
 var originalCities = ["images/normParis.jpg",
 				"images/normLondon.jpg",
 				"images/normSeattle.jpg",
@@ -44,9 +47,7 @@ var audioList = ["sounds/frenchAudio.mp3",
 				"sounds/japanAudio.mp3",
 				"sounds/mexicoAudio.mp3",
 				"sounds/skAudio.mp3"]
-var slideHint = ["images/zoomSantiago.jpg",
-		"images/zoomMilan.jpg",
-		"images/zoomMel.jpg"]
+
 var counter = -1;
 
 
@@ -61,10 +62,6 @@ function checkCity()
 			alert("Correct")
 			counter = i;
 			i= cityNames.length;
-		}
-		else
-		{
-			document.getElementById("display").src= slideHint[counter];
 		}
 	}
 		
@@ -85,7 +82,7 @@ function checkAnswer(usersGuess)
 
 function next()
 {
-	document.getElementById("display").src= zoomedCities[counter];
+	document.getElementById("display").src= zoomedCities[i];
 	increment();
 }
 function increment() 
