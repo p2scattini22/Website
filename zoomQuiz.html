@@ -50,7 +50,7 @@ var audioList = ["sounds/frenchAudio.mp3",
 				"sounds/japanAudio.mp3",
 				"sounds/mexicoAudio.mp3",
 				"sounds/skAudio.mp3"]
-var slideHints = ["images/hintParis.jpg",
+var slideHints = ["images/ggPic.jpg",
 				"images/hintLondon.jpg",
 				"images/hintSeattle.jpg"]
 				
@@ -71,7 +71,7 @@ function checkCity()
 		}
 		else
 		{
-			document.getElementById("display").src= slideHints[i];
+			checkAnswer(false)
 		}
 	}
 	if(counter==-1)
@@ -87,10 +87,10 @@ function checkAnswer(usersGuess)
 		document.getElementById("player").src = audioList[i];
 		document.getElementById("player").play();
 	}
-	//else
-	//{
-		//document.getElementById("display").src= slideHints[i];
-	//}
+	else
+	{
+		document.getElementById("display").src= slideHints[i];
+	}
 }
 
 function next()
