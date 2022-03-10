@@ -4,12 +4,18 @@
 
 
 var zoomedCities = ["images/zoomParis.jpg",
-					"images/zoomLondon.jpg",
-					"images/zoomSeattle.jpg",
-					"images/zoomTokyo.jpg",
-					"images/zoomMexico.jpg",
-					"images/zoomSeoul.jpg",
-					"images/zoomRome.jpg"]
+			"images/zoomLondon.jpg",
+			"images/zoomSeattle.jpg",
+			"images/zoomTokyo.jpg",
+			"images/zoomMexico.jpg",
+			"images/zoomSeoul.jpg",
+			"images/zoomRome.jpg",
+		  	"images/zoomBarcelona.jpg",
+			"images/zoomEgypt.jpg",
+			"images/zoomRio.jpg",
+		   	"images/zoomSantiago.jpg",
+			"images/zoomMilan.jpg",
+			"images/zoomMel.jpg"]
 var originalCities = ["images/normParis.jpg",
 				"images/normLondon.jpg",
 				"images/normSeattle.jpg",
@@ -23,31 +29,44 @@ var originalCities = ["images/normParis.jpg",
 				"images/normMilan.jpg",
 				"images/normMel.jpg"]
 var cityNames = ["Paris",
-				"London",
-				"Seattle",
-				"Tokyo",
-				"Mexico City",
-				"Seoul",
-				"Rome",
-				"Barcelona",
-				"Cairo",
-				"Rio",
-				"Santiago",
-				"Milan",
-				"Melbourne"]
+		"London",
+		"Seattle",
+		"Tokyo",
+		"Mexico City",
+		"Seoul",
+		"Rome",
+		"Barcelona",
+		"Cairo",
+		"Rio",
+		"Santiago",
+		"Milan",
+		"Melbourne"]
 var audioList = ["sounds/frenchAudio.mp3",
-				"sounds/englandAudio.mp3",
-				"sounds/americaAudio.mp3",
-				"sounds/japanAudio.mp3",
-				"sounds/mexicoAudio.mp3",
-				"sounds/skAudio.mp3"]
+			"sounds/englandAudio.mp3",
+			"sounds/americaAudio.mp3",
+			"sounds/japanAudio.mp3",
+			"sounds/mexicoAudio.mp3",
+			"sounds/skAudio.mp3",
+			"sounds/italyAudio.mp3",
+			"sounds/spainAudio.mp3",
+		 	"sounds/egyptAudio.mp3",
+		 	"sounds/brazilAudio.mp3",
+		 	"sounds/chileAudio.mp3",
+		 	"sounds/italyAudio.mp3",
+		 	"sounds/australiaAudio.mp3"]
 var hintList = ["images/parisHint.jpg",
-		"images/zoomBarcelona.jpg",
-			"images/zoomEgypt.jpg",
-			"images/zoomRio.jpg",
-		   	"images/zoomSantiago.jpg",
-			"images/zoomMilan.jpg",
-			"images/zoomMel.jpg"]
+		"images/hintLondon.jpg",
+		"images/hintSeattle.jpg",
+		"images/hintTokyo.jpg",
+		"images/hintMexico.jpg",
+		"images/hintSeoul.jpg",
+		"images/hintRome.jpg",
+		"images/hintBarcelona.jpg",
+		"images/hintCairo.jpg",
+		"images/hintRio.jpg",
+		"images/hintSantiago.jpg",
+		"images/hintMilan.jpg",
+		"images/hintMelbourne.jpg"]
 
 var counter = -1;
 
@@ -74,7 +93,6 @@ function checkCity()
 	alert("Try.")
 	      
 	      
-	//alert(counter);
 } 
 
 function checkAnswer(usersGuess)
