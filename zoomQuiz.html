@@ -9,13 +9,7 @@ var zoomedCities = ["images/zoomParis.jpg",
 					"images/zoomTokyo.jpg",
 					"images/zoomMexico.jpg",
 					"images/zoomSeoul.jpg",
-					"images/zoomRome.jpg",
-					"images/zoomBarcelona.jpg",
-					"images/zoomEgypt.jpg",
-					"images/zoomRio.jpg",
-		   			"images/zoomSantiago.jpg",
-					"images/zoomMilan.jpg"]
-					//"images/zoomMel.jpg"
+					"images/zoomRome.jpg"]
 var originalCities = ["images/normParis.jpg",
 				"images/normLondon.jpg",
 				"images/normSeattle.jpg",
@@ -47,7 +41,13 @@ var audioList = ["sounds/frenchAudio.mp3",
 				"sounds/japanAudio.mp3",
 				"sounds/mexicoAudio.mp3",
 				"sounds/skAudio.mp3"]
-var hintList = "images/parisHint.jpg"
+var hintList = ["images/parisHint.jpg",
+		"images/zoomBarcelona.jpg",
+			"images/zoomEgypt.jpg",
+			"images/zoomRio.jpg",
+		   	"images/zoomSantiago.jpg",
+			"images/zoomMilan.jpg",
+			"images/zoomMel.jpg"]
 
 var counter = -1;
 
@@ -66,12 +66,12 @@ function checkCity()
 		}
 		else
 		{
-			checkAnswer(false)
+			document.getElementById("display").src= hintList[i];
 		}
 	}
 		
 	if(counter == -1)
-	alert("Try again please.")
+	alert("Try again.")
 	      
 	      
 	//alert(counter);
@@ -84,10 +84,10 @@ function checkAnswer(usersGuess)
 		document.getElementById("player").src = audioList[i];
 		document.getElementById("player").play();
 	}
-	else
-	{
-		document.getElementById("display").src= hintList;
-	}
+	//else
+	//{
+		//document.getElementById("display").src= hintList[i];
+	//}
 }
 
 function next()
