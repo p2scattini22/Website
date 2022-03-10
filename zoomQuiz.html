@@ -64,7 +64,7 @@ function checkCity()
 			counter = i;
 			i= cityNames.length;
 		}
-		else
+		if (document.getElementById("message").value != cityNames[i])
 		{
 			checkAnswer(false)
 		}
