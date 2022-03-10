@@ -66,12 +66,12 @@ function checkCity()
 		}
 		else
 		{
-			document.getElementById("display").src= hintList[i];
+			checkAnswer(false)
 		}
 	}
 		
 	if(counter == -1)
-	alert("Try again.")
+	alert("Try.")
 	      
 	      
 	//alert(counter);
@@ -84,10 +84,10 @@ function checkAnswer(usersGuess)
 		document.getElementById("player").src = audioList[i];
 		document.getElementById("player").play();
 	}
-	//else
-	//{
-		//document.getElementById("display").src= hintList[i];
-	//}
+	else
+	{
+		document.getElementById("display").src= hintList[counter++];
+	}
 }
 
 function next()
